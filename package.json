@@ -1,0 +1,75 @@
+{
+  "name": "@isdou/dsh-journal",
+  "version": "0.1.3",
+  "description": "Turn DeepSeek Harness conversations and recorded changes into daily, weekly, and monthly work reports.",
+  "type": "module",
+  "engines": {
+    "dsh": "0.2.2-rc.3",
+    "node": ">=24.9"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "assets",
+    "screenshots.json"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "isdou",
+    "url": "https://github.com/isdou"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isdou/dsh-journal.git"
+  },
+  "homepage": "https://github.com/isdou/dsh-journal",
+  "bugs": {
+    "url": "https://github.com/isdou/dsh-journal/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "journal",
+    "daily-report",
+    "weekly-report",
+    "monthly-report"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-home-paths": "0.2.2-rc.3"
+  }
+}

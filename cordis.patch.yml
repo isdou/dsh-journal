@@ -1,0 +1,4 @@
+- insert:
+    - id: isdou-dsh-journal
+      name: '@isdou/dsh-journal'
+      config: {}
